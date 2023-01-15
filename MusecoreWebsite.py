@@ -29,6 +29,8 @@ import img2pdf
 
 from reportlab.graphics import renderPDF
 
+from pathvalidate import sanitize_filename
+
 class BrowserList(Enum):
     FIREFOX = "firefox"
     CHROME = "chrome"
@@ -38,7 +40,10 @@ class MusecoreWebsite():
     def __init__(self, scoreUrl:str, browser:BrowserList):
         if browser == BrowserList.FIREFOX:
             profile = FirefoxProfile()
+            profile.set_preference("browser.download.folderList", 2)
+            profile.set_preference("browser.download.manager.showWhenStarting", False)
             profile.set_preference("browser.download.dir", os.getcwd())
+            profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/x-gzip")
 
             self.driver = webdriver.Firefox(service=FirefoxService(executable_path=GeckoDriverManager().install()), firefox_profile=profile)
 
@@ -64,8 +69,18 @@ class MusecoreWebsite():
         
         """self.driver.get('chrome://settings/')
         self.driver.execute_script('chrome.settingsPrivate.setDefaultZoom(0.5);')"""
+        
+        
+        self.driver.get(scoreUrl)
 
-        self.scoreUrl = scoreUrl
+        #skip cookies popup
+        time.sleep(3)
+        try:
+            self.driver.find_element(By.CSS_SELECTOR, value=".css-47sehv").click()
+        except:
+            pass
+
+        self.scoreName = sanitize_filename(self.driver.title)[:200]
         self.scorePagesUrls = []
 
     def login(self, user:str, pwd:str):
@@ -82,16 +97,6 @@ class MusecoreWebsite():
         
 
     def scrapScoreSheets(self) -> list:
-        
-        self.driver.get(self.scoreUrl)
-
-        #skip cookies popup
-        time.sleep(3)
-        try:
-            self.driver.find_element(By.CSS_SELECTOR, value=".css-47sehv").click()
-        except:
-            pass
-
         scrollLength = 400
         scrollCount = 0
 
@@ -147,9 +152,7 @@ class MusecoreWebsite():
                         currentHandle = self.driver.current_window_handle
 
                         #open score page url in new tab
-                        self.driver.execute_script(f"window.open('{url}')")
-                        self.driver.switch_to.window(self.driver.window_handles[-1])
-                        time.sleep(2)
+                        #time.sleep(5)
 
                         #save page as picture if from musescore website
                         if url.startswith("https://musescore.com"):
@@ -159,13 +162,15 @@ class MusecoreWebsite():
                                 #f.write(self.driver.page_source)
                                 f.write(img)
                                 f.close()
+                        else:
+                            self.driver.execute_script(f"window.open('{url}')")
+                            #self.driver.switch_to.window(self.driver.window_handles[-1])
+                            self.driver.switch_to.window(currentHandle)
                         
                         #close the newly opened tab (if there is one)
-                        if len(self.driver.window_handles) > 1:
-                            self.driver.close()
+                        """if len(self.driver.window_handles) > 1:
+                            self.driver.close()"""
                         
-                        self.driver.switch_to.window(currentHandle)
-
                         #add the url to the already scrapped url list
                         self.scorePagesUrls.append(url)
 
@@ -188,10 +193,11 @@ class MusecoreWebsite():
 
                 merger.append(self.convertSheetToPdf(file))
         
-        score = merger.write(os.path.join(os.getcwd(), f"Musescore_score.pdf"))
+        targetPath = os.path.join(os.getcwd(), f"{self.scoreName}.pdf")
+        merger.write(targetPath)
         merger.close()
 
-        return score
+        return targetPath
 
     def convertSheetToPdf(self, sheetFilePath:str) -> str:
 
@@ -213,8 +219,11 @@ class MusecoreWebsite():
 
         return newSheetFilePath
 
-    def clearScoreSheets():
+
+    def clearScoreSheets(self):
         for file in os.listdir(os.getcwd()):
             if file.startswith("score_"):
                 os.remove(file)
+
+        self.driver.close()
 

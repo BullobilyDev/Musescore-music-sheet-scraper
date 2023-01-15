@@ -1,0 +1,96 @@
+1673821840605	geckodriver	INFO	Listening on 127.0.0.1:24177
+1673821843654	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "24178" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofilePeyt0c"
+1673821844059	Marionette	INFO	Marionette enabled
+1673821844066	Marionette	INFO	Listening on port 24190
+Read port: 24190
+WebDriver BiDi listening on ws://127.0.0.1:24178
+1673821844235	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofilePeyt0c\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:24178/devtools/browser/a5219c9e-780a-4891-9a9a-bc4d97f13f25
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+1673821922775	geckodriver	INFO	Listening on 127.0.0.1:24236
+1673821925848	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "24237" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofileBtIkUR"
+1673821926196	Marionette	INFO	Marionette enabled
+1673821926203	Marionette	INFO	Listening on port 24247
+Read port: 24247
+WebDriver BiDi listening on ws://127.0.0.1:24237
+1673821926345	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofileBtIkUR\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:24237/devtools/browser/da592fe7-9210-4098-aa47-810fdf4682bc
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+1673821950316	geckodriver	INFO	Listening on 127.0.0.1:24282
+1673821953362	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "24283" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofileVTtFpF"
+1673821953752	Marionette	INFO	Marionette enabled
+1673821953765	Marionette	INFO	Listening on port 24292
+Read port: 24292
+WebDriver BiDi listening on ws://127.0.0.1:24283
+1673821953952	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofileVTtFpF\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:24283/devtools/browser/e501915b-46b4-4c8b-967a-7345b77322ea
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://pagead2.googlesyndication.com/bg/sU6CjPDj0xr2jbZF4y7IwEoRNSn0ddnQS8nRuvxnxiY.js line 2 > eval line 1815 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1673821970341	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1673822023011	geckodriver	INFO	Listening on 127.0.0.1:26844
+1673822025694	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "26845" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofiledJm4tI"
+1673822028580	Marionette	INFO	Marionette enabled
+1673822028588	Marionette	INFO	Listening on port 26855
+Read port: 26855
+WebDriver BiDi listening on ws://127.0.0.1:26845
+1673822030254	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofiledJm4tI\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:26845/devtools/browser/19bb72d8-5f7a-4c6b-8c98-962b3cb4cc5d
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://pagead2.googlesyndication.com/bg/sU6CjPDj0xr2jbZF4y7IwEoRNSn0ddnQS8nRuvxnxiY.js line 2 > eval line 7793 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1673822045746	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1673822276965	geckodriver	INFO	Listening on 127.0.0.1:1277
+1673822280025	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "1278" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofileWNKaDJ"
+1673822280367	Marionette	INFO	Marionette enabled
+1673822280372	Marionette	INFO	Listening on port 1289
+Read port: 1289
+WebDriver BiDi listening on ws://127.0.0.1:1278
+1673822280542	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofileWNKaDJ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1278/devtools/browser/73641651-3ef2-49f3-b6ae-b44f4e3e60e2
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+1673822299223	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript warning: https://pagead2.googlesyndication.com/bg/sU6CjPDj0xr2jbZF4y7IwEoRNSn0ddnQS8nRuvxnxiY.js line 2 > eval line 3079 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1673823409700	geckodriver	INFO	Listening on 127.0.0.1:22865
+1673823412763	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "22866" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofileqoMHow"
+1673823413333	Marionette	INFO	Marionette enabled
+1673823413340	Marionette	INFO	Listening on port 22876
+Read port: 22876
+WebDriver BiDi listening on ws://127.0.0.1:22866
+1673823413513	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofileqoMHow\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:22866/devtools/browser/5c14831c-28f6-4144-8b96-d2af92668f52
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+1673823465734	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript warning: https://z.moatads.com/travel198849194933/moatad.js#moatClientLevel1=30000490&moatClientLevel2=50002640&moatClientLevel3=60013463&moatClientLevel4=70005149&moatClientSlicer1=1e97a5b53f91f5c3cf51ff81d2f2073d.safeframe.googlesyndication.com&moatClientSlicer2=728x90&zMoatSSP=0&zMoatIMPID=LnWIifIDFVUdWBgV8Vu7Dh4OFOzZSbMTbMtSqw&zMoatDeal=-1, line 238: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/sU6CjPDj0xr2jbZF4y7IwEoRNSn0ddnQS8nRuvxnxiY.js line 2 > eval line 1367 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://ads.travelaudience.com/js/creative.js?version=0.0.0, line 1: TypeError: s.default.global._toCookies is not a function
+1673823472226	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1673823722964	geckodriver	INFO	Listening on 127.0.0.1:1110
+1673823726172	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "1111" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofileifHKWy"
+1673823726718	Marionette	INFO	Marionette enabled
+1673823726726	Marionette	INFO	Listening on port 1121
+Read port: 1121
+WebDriver BiDi listening on ws://127.0.0.1:1111
+1673823726904	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ALEXAN~1\\AppData\\Local\\Temp\\rust_mozprofileifHKWy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1111/devtools/browser/259e2813-fcb5-45e0-83df-6093f5d5b729
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://pagead2.googlesyndication.com/bg/sU6CjPDj0xr2jbZF4y7IwEoRNSn0ddnQS8nRuvxnxiY.js line 2 > eval line 1835 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1673823786024	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1673823786055	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1673823786058	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1673823792463	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1673823832324	Marionette	INFO	Stopped listening on port 1121
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
