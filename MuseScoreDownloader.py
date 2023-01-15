@@ -1,4 +1,4 @@
-from MusecoreWebsite import BrowserList, MusecoreWebsite
+from MuseScoreWebsite import BrowserList, MusecoreWebsite
 import sys
 
 print("""
@@ -55,6 +55,8 @@ website.scrapScoreSheets()
 musicScorePath = website.convertScoretSheets()
 website.clearScoreSheets()
 
-input(f"\nScore successfully downloaded. Download location:\n{musicScorePath}.")
+input(f"\nScore successfully downloaded. Download location:\n{musicScorePath}")
+
+print("You can now close the script.")
+
 sys.exit(1)
-#pyinstaller -F -w -icon="executable_logo.ico" main.py
