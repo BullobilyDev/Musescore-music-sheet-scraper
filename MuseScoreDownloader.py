@@ -1,4 +1,5 @@
 from MusecoreWebsite import BrowserList, MusecoreWebsite
+import sys
 
 print("""
 ███╗   ███╗██╗   ██╗███████╗███████╗███████╗ ██████╗ ██████╗ ██████╗ ███████╗         
@@ -30,7 +31,7 @@ Your choice: """)
     if userInput == "f":
         browser = BrowserList.FIREFOX
     elif userInput == "c":
-        browser = BrowserList.FIREFOX
+        browser = BrowserList.CHROME
     else:
         print("\nInvalid choice, please retry.")
 
@@ -43,8 +44,8 @@ while scoreUrl == "":
     else:
         print("\nInvalid choice, the link should start with 'https://musescore.com', please retry.")
 
-print("""
-\nMusic score scrapping is in progress. It may take a few minutes.
+print(
+"""\nMusic score scrapping is in progress. It may take a few minutes.
 To avoid weird bugs, please set and keep focus on script browser window.
 Please don't interract with the script browser window!\n""")
 
@@ -55,5 +56,5 @@ musicScorePath = website.convertScoretSheets()
 website.clearScoreSheets()
 
 input(f"\nScore successfully downloaded. Download location:\n{musicScorePath}.")
-exit()
+sys.exit(1)
 #pyinstaller -F -w -icon="executable_logo.ico" main.py

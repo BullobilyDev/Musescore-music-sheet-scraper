@@ -49,6 +49,7 @@ class MusecoreWebsite():
 
         elif browser == BrowserList.CHROME:
             options = ChromeOptions()
+            options.add_experimental_option('excludeSwitches', ['enable-logging'])
             options.add_experimental_option("prefs", {
             "download.default_directory": os.getcwd()
             })
@@ -57,6 +58,7 @@ class MusecoreWebsite():
 
         elif browser == BrowserList.EDGE_DO_NOT_USE:
             options = EdgeOptions()
+            options.add_experimental_option('excludeSwitches', ['enable-logging'])
             options.add_experimental_option("prefs", {
             "download.default_directory": os.getcwd()
             })

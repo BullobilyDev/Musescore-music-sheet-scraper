@@ -2,7 +2,7 @@ import PyInstaller.__main__
 
 PyInstaller.__main__.run([
     'MuseScoreDownloader.py',
-    #'--onefile',
+    '--onefile',
     #'--windowed',
     '-i=executable_logo.ico'
 ])
