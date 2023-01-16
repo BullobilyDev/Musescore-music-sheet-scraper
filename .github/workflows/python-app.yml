@@ -42,13 +42,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pyinstaller
-          pyinstaller --onefile --name=MuseScoreDownloader${{ runner.os }} MuseScoreDownloader.py
+          pyinstaller --onefile --name=MuseScoreDownloader_${{ runner.os }} -i=executable_logo.ico MuseScoreDownloader.py
 
       #upload artifact to make it available
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           path: dist/*
+          name: MuseScoreDownloader_${{ runner.os }}
 
       #Create release to make executable available
       - name: Create release
