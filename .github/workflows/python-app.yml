@@ -61,15 +61,19 @@ jobs:
             build/*.exe
             build/*.bin
             build/*.app/**/*
-            
 
-      - name: Download Artifacts
-        uses: actions/download-artifact@v3
+      #Create release to make executable available
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          name: ${{ runner.os }} build
-          path: build
-          
+          tag_name: ${{ github.ref }}
+          release_name: Release for ${{ runner.os }} (${{ github.ref }})
+          body: |
+            If you enjoy the tool, please leave a github star!
+          draft: false
+          prerelease: false
 
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: path/to/artifact
+          
