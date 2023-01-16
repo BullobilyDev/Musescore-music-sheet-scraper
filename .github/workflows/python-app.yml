@@ -42,7 +42,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pyinstaller
-          pyinstaller --onefile --name=MuseScoreDownloader_${{ runner.os }} -i=executable_logo.ico MuseScoreDownloader.py
+          pyinstaller --onefile '--name=MuseScoreDownloader_${{ runner.os }}' '--icon=resources\executable_logo.ico' MuseScoreDownloader.py
 
       #upload artifact to make it available
       - name: Upload artifact
