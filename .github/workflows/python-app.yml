@@ -51,19 +51,31 @@ jobs:
           path: dist/*
           name: MuseScoreDownloader_${{ runner.os }}
 
-      #Create release to make executable available
+
+
       - name: Create release
-        id: create_release
-        uses: actions/create-release@latest #actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          tag_name: executable_script #${{ github.ref }}
-          release_name: Release for ${{ runner.os }} (${{ steps.date.outputs.date }})
-          body: |
-            If you enjoy the tool, please leave a github star!
-          draft: false
-          prerelease: false
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: ${{ runner.os }}_latest
+          #prerelease: true
+          title: MuseScoreDownloader script (${{ runner.os }} version)
+          files: |
+            dist/*
+
+      # #Create release to make executable available
+      # - name: Create release
+      #   id: create_release
+      #   uses: actions/create-release@latest #actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      #   with:
+      #     tag_name: refs/tags/executable_script #${{ github.ref }}
+      #     release_name: Release for ${{ runner.os }} (${{ steps.date.outputs.date }})
+      #     body: |
+      #       If you enjoy the tool, please leave a github star!
+      #     draft: false
+      #     prerelease: false
 
 
 
