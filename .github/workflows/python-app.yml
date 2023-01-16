@@ -17,8 +17,8 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-        #os: [windows-latest]
+        #os: [macos-latest, windows-latest] #, ubuntu-latest
+        os: [windows-latest]
       
     runs-on: ${{ matrix.os }}
 
@@ -65,19 +65,19 @@ jobs:
           files: |
             dist/*
 
-      # #Create release to make executable available
-      # - name: Create release
-      #   id: create_release
-      #   uses: actions/create-release@latest #actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-      #   with:
-      #     tag_name: refs/tags/executable_script #${{ github.ref }}
-      #     release_name: Release for ${{ runner.os }} (${{ steps.date.outputs.date }})
-      #     body: |
-      #       If you enjoy the tool, please leave a github star!
-      #     draft: false
-      #     prerelease: false
+      #Create release to make executable available
+      - name: Create release 2
+        id: create_release
+        uses: actions/create-release@latest #actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: executable_script_${{ runner.os }}
+          release_name: Release for ${{ runner.os }} (${{ steps.date.outputs.date }})
+          body: |
+            If you enjoy the tool, please leave a github star!
+          draft: false
+          prerelease: false
 
 
 
