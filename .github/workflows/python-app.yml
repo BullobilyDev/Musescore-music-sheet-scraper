@@ -57,7 +57,7 @@ jobs:
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: ${{ runner.os }}_latest
+          automatic_release_tag: refs/tags/${{ runner.os }}_build
           #prerelease: false
           title: MuseScoreDownloader script for ${{ runner.os }}
           files: |
