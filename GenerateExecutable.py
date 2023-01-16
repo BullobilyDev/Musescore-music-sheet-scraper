@@ -6,3 +6,6 @@ PyInstaller.__main__.run([
     #'--windowed',
     '-i=executable_logo.ico'
 ])
+
+#generate updated requirements.txt
+#pipreqs --encoding utf-8 --force
