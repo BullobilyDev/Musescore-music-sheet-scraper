@@ -78,6 +78,7 @@ jobs:
             If you enjoy the tool, please leave a github star!
           draft: false
           prerelease: false
+          asset_path: build/*
 
 
 
