@@ -23,9 +23,13 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    
       # Check-out repository
       - uses: actions/checkout@v3
+
+      #get date
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       
       # Setup Python
       - name: Setup python
@@ -37,6 +41,30 @@ jobs:
       - run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pyinstaller
+          pyinstaller --onefile --name=MuseScoreDownloader${{ runner.os }} MuseScoreDownloader.py
+
+      #upload artifact to make it available
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          path: dist/*
+
+      #Create release to make executable available
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@latest #actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release for ${{ runner.os }} (${{ steps.date.outputs.date }})
+          body: |
+            If you enjoy the tool, please leave a github star!
+          draft: false
+          prerelease: false
+
+
 
 
       # Build python script into a stand-alone exe
@@ -70,7 +98,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release for ${{ runner.os }} (${{ github.ref }})
+          release_name: Release for ${{ runner.os }} (${{ steps.date.outputs.date }})
           body: |
             If you enjoy the tool, please leave a github star!
           draft: false
