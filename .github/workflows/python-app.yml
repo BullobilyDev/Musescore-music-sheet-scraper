@@ -53,20 +53,8 @@ jobs:
           path: dist/*
           name: MuseScoreDownloader_${{ runner.os }}
 
-
-
+      #create release
       - name: Create release
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: refs/tags/${{ runner.os }}_build
-          #prerelease: false
-          title: MuseScoreDownloader script for ${{ runner.os }}
-          files: |
-            dist/*
-
-      #Create release to make executable available
-      - name: Create release 2
         id: create_release
         uses: actions/create-release@latest #actions/create-release@v1
         env:
@@ -78,7 +66,51 @@ jobs:
             If you enjoy the tool, please leave a github star!
           draft: false
           prerelease: false
+
+      #add file to release
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: build/*
+          asset_name: "*"
+          #asset_content_type: application/zip
+
+      #publish release 
+      - name: Publish release
+        uses: StuYarrow/publish-release@v1.1.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          id: ${{ steps.create_release.outputs.id }}
+
+
+      # - name: Create release
+      #   uses: marvinpinto/action-automatic-releases@latest
+      #   with:
+      #     repo_token: ${{ secrets.GITHUB_TOKEN }}
+      #     automatic_release_tag: refs/tags/${{ runner.os }}_build
+      #     #prerelease: false
+      #     title: MuseScoreDownloader script for ${{ runner.os }}
+      #     files: |
+      #       dist/*
+
+      # #Create release to make executable available
+      # - name: Create release 2
+      #   id: create_release
+      #   uses: actions/create-release@latest #actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      #   with:
+      #     tag_name: executable_script_${{ runner.os }}
+      #     release_name: Release for ${{ runner.os }} (${{ steps.date.outputs.date }})
+      #     body: |
+      #       If you enjoy the tool, please leave a github star!
+      #     draft: false
+      #     prerelease: false
+      #     asset_path: build/*
 
 
 
